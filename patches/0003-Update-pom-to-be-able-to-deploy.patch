@@ -1,0 +1,46 @@
+From 63c6bd279f23620a2f6cd9bf9748826285452879 Mon Sep 17 00:00:00 2001
+From: Jamie Mansfield <malgm@lapis.blue>
+Date: Wed, 28 Jan 2015 23:08:24 +0000
+Subject: [PATCH] Update pom to be able to deploy
+
+
+diff --git a/pom.xml b/pom.xml
+index 853fab1..756b445 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -24,15 +24,14 @@
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     </properties>
+ 
+-    <!-- just until we get deployment to central approved -->
+     <distributionManagement>
+         <repository>
+-            <id>spigotmc-releases</id>
+-            <url>https://hub.spigotmc.org/nexus/content/repositories/releases/</url>
++            <id>lex-releases</id>
++            <url>file:///Users/jamie/Repo</url>
+         </repository>
+         <snapshotRepository>
+-            <id>spigotmc-releases</id>
+-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
++            <id>lex-snapshots</id>
++            <url>file:///Users/jamie/Repo</url>
+         </snapshotRepository>
+     </distributionManagement>
+ 
+@@ -154,5 +153,12 @@
+                 </configuration>
+             </plugin>
+         </plugins>
++        <extensions>
++            <extension>
++                <groupId>org.apache.maven.wagon</groupId>
++                <artifactId>wagon-file</artifactId>
++                <version>2.7</version>
++            </extension>
++        </extensions>
+     </build>
+ </project>
+-- 
+1.9.3 (Apple Git-50)
+
