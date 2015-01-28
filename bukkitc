@@ -40,7 +40,7 @@ apply_patches() {
 bukkitc_update() {
     echo "> Updating submodules..."
     git submodule update --init
-    echo "> Updating BukkitC…”
+    echo "> Updating BukkitC..."
     apply_patches Bukkit Patches patches
 }
 clean_patches() {
@@ -74,7 +74,7 @@ make_patches() {
     echo ">> Successfully saved patches for $repo!"
 }
 bukkitc_patches() {
-    echo "> Recreating patches for BukkitC…”
+    echo "> Recreating patches for BukkitC..."
     make_patches Bukkit Patches patches
 }
 if [ -z $1 ]; then
@@ -82,7 +82,7 @@ if [ -z $1 ]; then
     exit
 fi
 # TODO: Improve this, just a little bit lazy right now
-if [ "$(type -t “bukkitc_$1")" = "function" ]; then
+if [ "$(type -t "bukkitc_$1")" = "function" ]; then
     "bukkitc_$@"
 else
     >&2 echo "Unknown command: '$@'. Type '$0 help' for more information."
