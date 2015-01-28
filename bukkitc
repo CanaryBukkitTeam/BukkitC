@@ -41,7 +41,7 @@ bukkitc_update() {
     echo "> Updating submodules..."
     git submodule update --init
     echo "> Updating BukkitC..."
-    apply_patches Bukkit Patches patches
+    apply_patches Bukkit Bukkit-Patches patches
 }
 clean_patches() {
     # Based on https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse/rebuildPatches.sh#7
@@ -75,7 +75,7 @@ make_patches() {
 }
 bukkitc_patches() {
     echo "> Recreating patches for BukkitC..."
-    make_patches Bukkit Patches patches
+    make_patches Bukkit Bukkit-Patches patches
 }
 if [ -z $1 ]; then
     bukkitc_help

@@ -1,0 +1,28 @@
+From 6d6bb59ae31bad3ee810edd6a2b51de6abe9f3af Mon Sep 17 00:00:00 2001
+From: Jamie Mansfield <malgm@lapis.blue>
+Date: Wed, 28 Jan 2015 22:44:35 +0000
+Subject: [PATCH] Add prefix to default commands
+
+
+diff --git a/src/main/java/org/bukkit/command/SimpleCommandMap.java b/src/main/java/org/bukkit/command/SimpleCommandMap.java
+index a229d08..06e083b 100644
+--- a/src/main/java/org/bukkit/command/SimpleCommandMap.java
++++ b/src/main/java/org/bukkit/command/SimpleCommandMap.java
+@@ -28,10 +28,10 @@ public class SimpleCommandMap implements CommandMap {
+     }
+ 
+     private void setDefaultCommands() {
+-        register("bukkit", new VersionCommand("version"));
+-        register("bukkit", new ReloadCommand("reload"));
+-        register("bukkit", new PluginsCommand("plugins"));
+-        register("bukkit", new TimingsCommand("timings"));
++        register("bukkit", new VersionCommand("bversion"));
++        register("bukkit", new ReloadCommand("breload"));
++        register("bukkit", new PluginsCommand("bplugins"));
++        register("bukkit", new TimingsCommand("btimings"));
+     }
+ 
+     public void setFallbackCommands() {
+-- 
+1.9.3 (Apple Git-50)
+
