@@ -1,11 +1,11 @@
-From 63c6bd279f23620a2f6cd9bf9748826285452879 Mon Sep 17 00:00:00 2001
+From e985854f7b451006467d2c863bc15a25c1f1084c Mon Sep 17 00:00:00 2001
 From: Jamie Mansfield <malgm@lapis.blue>
 Date: Wed, 28 Jan 2015 23:08:24 +0000
 Subject: [PATCH] Update pom to be able to deploy
 
 
 diff --git a/pom.xml b/pom.xml
-index 853fab1..756b445 100644
+index 853fab1..a75c29b 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -24,15 +24,14 @@
@@ -18,13 +18,13 @@ index 853fab1..756b445 100644
 -            <id>spigotmc-releases</id>
 -            <url>https://hub.spigotmc.org/nexus/content/repositories/releases/</url>
 +            <id>lex-releases</id>
-+            <url>file:///Users/jamie/Repo</url>
++            <url>file://${env.REPO_GLOBAL}</url>
          </repository>
          <snapshotRepository>
 -            <id>spigotmc-releases</id>
 -            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 +            <id>lex-snapshots</id>
-+            <url>file:///Users/jamie/Repo</url>
++            <url>file://${env.REPO_GLOBAL}</url>
          </snapshotRepository>
      </distributionManagement>
  
@@ -42,5 +42,5 @@ index 853fab1..756b445 100644
      </build>
  </project>
 -- 
-1.9.3 (Apple Git-50)
+2.3.0
 
