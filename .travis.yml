@@ -17,6 +17,7 @@ notifications:
 env:
   global:
     - LEX_DEPLOY=https://github.com/LexBot/Deploy.git DEPLOY_ROOT=/tmp/lex/deploy
+    - GIT_REPO=git@github.com:CanaryBukkitTeam/Repo.git
     - secure: "VU0cpa3X0AvCkjMfs7PH564wOJnKGN0ei0aFlvCxWa7agpMIvEUHAycThcIo6Py/Uv9VhrR2RLdmO0Mbvs3vWDuUicWpg4B1slUlxbwlSGW5mzVNzBGR7BD7XJBoaVqkb9DgDO15kxeCdlhZ77fit8MXHyELy7ALznVJm/2qAUM="
 after_success:
   - git clone $LEX_DEPLOY $DEPLOY_ROOT && $DEPLOY_ROOT/maven_repo "mvn source:jar javadoc:jar deploy"
